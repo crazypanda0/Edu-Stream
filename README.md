@@ -1,5 +1,3 @@
-# **HM0026**  **Team-X-force**
-
 ## **📌 EduStream: Curated Educational Video Platform with Progress Tracking**
 
 ---
