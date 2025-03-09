@@ -45,7 +45,7 @@ EduStream is an advanced **e-learning video platform** designed to make online e
 ---
 
 ## 🌍 Deployed URL  
-🔗 [Live Demo](https://website-x-force.vercel.app/)  
+🔗 [Live Demo](https://edu-stream-delta.vercel.app/)  
 🔗 [Backend](https://edu-stream.onrender.com/)
 
 ---
