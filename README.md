@@ -1,5 +1,3 @@
-# **HM0026**  **Team-X-force**
-
 ## **📌 EduStream: Curated Educational Video Platform with Progress Tracking**
 
 ---
@@ -48,7 +46,7 @@ EduStream is an advanced **e-learning video platform** designed to make online e
 
 ## 🌍 Deployed URL  
 🔗 [Live Demo](https://website-x-force.vercel.app/)  
-🔗 [Backend](https://edu-backend-try.onrender.com/)
+🔗 [Backend](https://edu-stream.onrender.com/)
 
 ---
 
