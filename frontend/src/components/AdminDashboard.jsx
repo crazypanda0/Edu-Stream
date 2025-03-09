@@ -35,12 +35,12 @@ const AdminDashboard = () => {
     const dateOnly = timestamp.split("T")[0];
     return dateOnly;
   }
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     async function getPendingVideo() {
       try {
         const response = await fetch(
-          "http://localhost:3000/user/getpendingvideo",
+          `${backendUrl}/user/getpendingvideo`,
           {
             method: "POST",
             headers: {
@@ -128,7 +128,7 @@ const AdminDashboard = () => {
 
   async function approveVideo(id) {
     try {
-      await fetch("http://localhost:3000/user/flagvideos", {
+      await fetch(`${backendUrl}/user/flagvideos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const AdminDashboard = () => {
     async function getAnalyticsData() {
       // Placeholder for analytics data fetching
       try {
-        const response = await fetch("http://localhost:3000/user/admin/getvideos", {
+        const response = await fetch(`${backendUrl}/user/admin/getvideos`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -153,7 +153,7 @@ const AdminDashboard = () => {
           body: JSON.stringify({ token: token}),
         });
 
-        const res = await fetch("http://localhost:3000/user/getuserdata",{
+        const res = await fetch(`${backendUrl}/user/getuserdata`,{
           method : 'GET'
         });
 

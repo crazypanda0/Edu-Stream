@@ -143,7 +143,7 @@ const TeacherDashboard = () => {
   useEffect(() => {
     async function getData() {
       const response = await fetch(
-        "http://localhost:3000/user/getuserdata/instructor",
+        `${backendUrl}/user/getuserdata/instructor`,
         {
           method: "POST",
           headers: {
@@ -186,10 +186,11 @@ const TeacherDashboard = () => {
   }, []);
 
   // TODO : get all videos
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     async function getData() {
       const response = await fetch(
-        "http://localhost:3000/user/getinstructorvideo",
+        `${backendUrl}/user/getinstructorvideo`,
         {
           method: "POST",
           headers: {

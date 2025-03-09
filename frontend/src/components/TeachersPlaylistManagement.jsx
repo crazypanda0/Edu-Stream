@@ -97,8 +97,8 @@ const VideoUploadForm = () => {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("duration", formData.duration);
       formDataToSend.append("tags", formData.tags);
-
-      const response = await fetch("http://localhost:3000/user/addvideo", {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const response = await fetch(`${backendUrl}/user/addvideo`, {
         method: "POST",
         headers: {
           token: token,

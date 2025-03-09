@@ -72,14 +72,14 @@ const Login = () => {
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
       console.log("Login submitted:", formData);
       const toastId = toast.loading("Loading")
       axios
-        .post("http://localhost:3000/user/login", formData)
+        .post(`${backendUrl}/user/login`, formData)
         .then((res) => {
           console.log(res.data.token);
           localStorage.setItem("token", res.data.token);

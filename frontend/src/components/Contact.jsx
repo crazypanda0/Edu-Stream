@@ -51,10 +51,10 @@ const Contact = () => {
 
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
     try 
     {
-      const response = await fetch('http://localhost:3000/contact',{
+      const response = await fetch(`${backendUrl}/contact`,{
         method : 'POST',
         headers : {
           "Content-Type": "application/json",

@@ -32,12 +32,12 @@ const EduStreamFeed = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchInput,setSearchInput] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
 
     async function getVideos() {
       try {
-        const response = await fetch('http://localhost:3000/user/getvideos', {
+        const response = await fetch(`${backendUrl}/user/getvideos`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const EduStreamFeed = () => {
 
     try 
     {
-      const response = await fetch('http://localhost:3000/user/videoisclicked',{
+      const response = await fetch(`${backendUrl}/user/videoisclicked`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ const EduStreamFeed = () => {
     try 
     {
       console.log(searchInput)
-      const response = await fetch('http://localhost:3000/user/feed/getvideo/search',{
+      const response = await fetch(`${backendUrl}/user/feed/getvideo/search`,{
         method : 'POST',
         headers : {
           'Content-Type' : 'application/json',

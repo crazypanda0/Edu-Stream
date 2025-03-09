@@ -66,12 +66,12 @@ const StudentDashboard = () => {
   const handleleaderboard = () => {
     navigate("/dashboard/student/leaderboard");
   };
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(()=>{
 
       async function getData()
       {
-        const response = await fetch('http://localhost:3000/user/getuserdata/student',{
+        const response = await fetch(`${backendUrl}/user/getuserdata/student`,{
           method : "POST",
           headers : 
           {
@@ -86,7 +86,7 @@ const StudentDashboard = () => {
 
       async function getWatchHistory()
       {
-        const response = await fetch('http://localhost:3000/user/watchhistory',{
+        const response = await fetch(`${backendUrl}/user/watchhistory`,{
           method : "POST",
           headers : 
           {
@@ -103,7 +103,7 @@ const StudentDashboard = () => {
     {
        try 
        {
-        const response = await fetch('http://localhost:3000/user/getvideos',{
+        const response = await fetch(`${backendUrl}/user/getvideos`,{
           method : 'POST',
           headers :
           {
@@ -135,7 +135,7 @@ const StudentDashboard = () => {
   {
     try 
     {
-      const response = await fetch('http://localhost:3000/user/videoisclicked',{
+      const response = await fetch(`${backendUrl}/user/videoisclicked`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -68,13 +68,13 @@ const Signup = () => {
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
       console.log("Form submitted:", formData);
       const toastId = toast.loading("Creating your account...");
-      axios.put('https://edu-backend-try.onrender.com/user/signup', formData)
+      axios.put(`${backendUrl}/user/signup`, formData)
         .then(res => {
           console.log(res.data);
           toast.dismiss(toastId);

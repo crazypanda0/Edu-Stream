@@ -54,12 +54,12 @@ const VideoPlayer = () => {
   const [notes, setNotes] = useState("");
   const [showNotes, setShowNotes] = useState(false);
   const [isGeneratingNotes, setIsGeneratingNotes] = useState(false);
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     async function getVideoInformation() {
       try {
         const response = await fetch(
-          `http://localhost:3000/user/feed/${videoId}`,
+          `${backendUrl}/user/feed/${videoId}`,
           {
             method: "POST",
             headers: {
@@ -80,7 +80,7 @@ const VideoPlayer = () => {
 
     async function getRelativeVideo() {
       try {
-        const response = await fetch("http://localhost:3000/user/getvideos", {
+        const response = await fetch(`${backendUrl}/user/getvideos`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
